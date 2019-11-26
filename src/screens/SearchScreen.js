@@ -1,13 +1,16 @@
-import React, { Component } from "react";
-
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 
-export default class screens extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Hello</Text>
-      </View>
-    );
-  }
-}
+import SearchBar from "../components/SearchBar";
+
+const SearchScreen = () => {
+  const [term, setTerm] = useState("");
+
+  return (
+    <View>
+      <SearchBar term={term} onTermChange={newTerm => setTerm(newTerm)} />
+    </View>
+  );
+};
+
+export default SearchScreen;
